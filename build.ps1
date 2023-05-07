@@ -1,2 +1,2 @@
-cmake --build build
-Copy-Item .\build\compile_commands.json .
+mingw32-make
+Copy-Item .\.qtc_clangd\compile_commands.json .

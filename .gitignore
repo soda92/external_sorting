@@ -2,3 +2,14 @@
 /build
 /compile_commands.json
 /.cache
+
+*.pro.user
+Makefile.Debug
+Makefile.Release
+Makefile
+
+/debug
+/release
+/.qtc_clangd
+.qmake.stash
+*.o

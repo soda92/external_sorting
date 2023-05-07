@@ -10,5 +10,5 @@ int main() {
     for (auto str : container) {
         fmt::print("{} ", str);
     }
-    return 0;
+    fmt::print("\n");
 }
