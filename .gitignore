@@ -1,15 +1,8 @@
-*.exe
 /build
 /compile_commands.json
 /.cache
 
-*.pro.user
-Makefile.Debug
-Makefile.Release
-Makefile
+/qt_stab
+/build-qt_stab*
 
-/debug
-/release
-/.qtc_clangd
-.qmake.stash
-*.o
+/.vscode
