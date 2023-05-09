@@ -2,8 +2,8 @@
 /compile_commands.json
 /.cache
 
-/qt_stab
-/build-qt_stab*
+/qt_*
+/build-qt_*
 
 /.vscode
 /large_data.bin

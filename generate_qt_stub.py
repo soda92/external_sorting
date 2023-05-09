@@ -6,10 +6,10 @@ CURRENT = Path(__file__).resolve().parent
 files = list(CURRENT.glob("*.cpp"))
 files.extend(list(CURRENT.glob("*.cc")))
 
-QtStabPath = Path("qt_stub")
-if QtStabPath.exists():
-    shutil.rmtree(QtStabPath)
-QtStabPath.mkdir()
+QtStubPath = Path("qt_stub")
+if QtStubPath.exists():
+    shutil.rmtree(QtStubPath)
+QtStubPath.mkdir()
 
 for file in files:
     libs = []
@@ -21,7 +21,7 @@ for file in files:
                 libs = parts[1].split()
     libs_str = " ".join(map(lambda x: f"-l{x}", libs))
     folder_name = file.stem
-    dir_name = QtStabPath / folder_name
+    dir_name = QtStubPath / folder_name
     dir_name.mkdir(exist_ok=True)
     pro_name = dir_name / f"{folder_name}.pro"
     if not pro_name.exists():
@@ -42,10 +42,10 @@ LIBS += {libs_str}
 """
                 )
 
-qt_stab_pro = QtStabPath / "qt_stab.pro"
+qt_stub_pro = QtStubPath / "qt_stub.pro"
 subdirs = " ".join(map(lambda x: x.stem, files))
-if not qt_stab_pro.exists():
-    with open(qt_stab_pro, "w") as f:
+if not qt_stub_pro.exists():
+    with open(qt_stub_pro, "w") as f:
         f.write(
             f"""
 TEMPLATE = subdirs
