@@ -6,3 +6,4 @@
 /build-qt_stab*
 
 /.vscode
+/large_data.bin

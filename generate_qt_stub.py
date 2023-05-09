@@ -6,7 +6,7 @@ CURRENT = Path(__file__).resolve().parent
 files = list(CURRENT.glob("*.cpp"))
 files.extend(list(CURRENT.glob("*.cc")))
 
-QtStabPath = Path("qt_stab")
+QtStabPath = Path("qt_stub")
 if QtStabPath.exists():
     shutil.rmtree(QtStabPath)
 QtStabPath.mkdir()

@@ -9,7 +9,8 @@ if ConfPath.exists():
 ConfPath.mkdir()
 tasks_conf = ConfPath / "tasks.json"
 
-tasks_conf.write_text(
+if False:
+    tasks_conf.write_text(
     """
 {
     "version": "2.0.0",
@@ -22,7 +23,7 @@ tasks_conf.write_text(
     ]
 }"""
 )
-build_dir = list(CURRENT.glob("build-qt_stab*"))
+build_dir = list(CURRENT.glob("build-qt_stub*"))
 if len(build_dir) != 1:
     print("error: mutiple build path")
     exit(-1)
@@ -38,7 +39,6 @@ conf_single = """
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/{dirname}/{program}",
-            "preLaunchTask": "build",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
